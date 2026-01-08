@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>
+                    <span class="logo-icon">🎭</span>
+                    Meme Generator
+                </h1>
+                <p class="tagline">Create hilarious memes in seconds</p>
+            </div>
+        </header>
+
+        <main class="main-container">
+            <div class="sidebar">
+                <section class="control-section">
+                    <h2 class="section-title">
+                        <span class="section-icon">🖼️</span>
+                        Templates
+                    </h2>
+                    <div class="templates-grid" id="templatesGrid">
+                        <!-- Template thumbnails will be loaded here -->
+                    </div>
+                </section>
+
+                <section class="control-section">
+                    <h2 class="section-title">
+                        <span class="section-icon">📤</span>
+                        Upload Image
+                    </h2>
+                    <label for="imageUpload" class="upload-area">
+                        <div class="upload-content">
+                            <span class="upload-icon">📁</span>
+                            <span class="upload-text">Choose an image</span>
+                            <span class="upload-hint">PNG, JPG, GIF up to 10MB</span>
+                        </div>
+                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                    </label>
+                </section>
+
+                <section class="control-section">
+                    <h2 class="section-title">
+                        <span class="section-icon">✏️</span>
+                        Text Controls
+                    </h2>
+                    
+                    <div class="text-control-card">
+                        <div class="card-header">
+                            <h3>Top Text</h3>
+                        </div>
+                        <div class="card-body">
+                            <input type="text" id="topText" placeholder="Enter top text..." maxlength="100" class="text-input">
+                            <div class="color-group">
+                                <div class="color-item">
+                                    <label for="topTextColor">Text</label>
+                                    <div class="color-picker-wrapper">
+                                        <input type="color" id="topTextColor" value="#ffffff">
+                                        <span class="color-value">#ffffff</span>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <label for="topStrokeColor">Outline</label>
+                                    <div class="color-picker-wrapper">
+                                        <input type="color" id="topStrokeColor" value="#000000">
+                                        <span class="color-value">#000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-control-card">
+                        <div class="card-header">
+                            <h3>Bottom Text</h3>
+                        </div>
+                        <div class="card-body">
+                            <input type="text" id="bottomText" placeholder="Enter bottom text..." maxlength="100" class="text-input">
+                            <div class="color-group">
+                                <div class="color-item">
+                                    <label for="bottomTextColor">Text</label>
+                                    <div class="color-picker-wrapper">
+                                        <input type="color" id="bottomTextColor" value="#ffffff">
+                                        <span class="color-value">#ffffff</span>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <label for="bottomStrokeColor">Outline</label>
+                                    <div class="color-picker-wrapper">
+                                        <input type="color" id="bottomStrokeColor" value="#000000">
+                                        <span class="color-value">#000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="control-section">
+                    <button id="downloadBtn" class="download-btn" disabled>
+                        <span class="btn-icon">💾</span>
+                        <span>Download Meme</span>
+                    </button>
+                </section>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-header">
+                    <h2>Preview</h2>
+                </div>
+                <div class="canvas-wrapper">
+                    <div class="canvas-placeholder" id="canvasPlaceholder">
+                        <div class="placeholder-content">
+                            <span class="placeholder-icon">🖼️</span>
+                            <p>Upload an image to get started</p>
+                        </div>
+                    </div>
+                    <canvas id="memeCanvas"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
